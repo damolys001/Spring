@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:data="https://github.com/mxab/thymeleaf-extras-data-attribute"
+      layout:decorator="layout/root_layout">
+<!-- -->
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+</head>
+<body>
+    <div layout:fragment = "page-content">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Dashboard</h3>
+            </div>
+            <div class="panel-body">
+                <canvas id="pieChart" width="400" height="100"></canvas>
+                <script>
+                    var ctx = document.getElementById("pieChart");
+                    var data = {
+                        labels: [
+                            "Issued cards",
+                            "Inactive cards",
+                            "Unissued cards"
+                        ],
+                        datasets: [
+                            {
+                                data: [300, 5, 100],
+                                backgroundColor: [
+                                    "lightgreen",
+                                    "red",
+                                    "yellow"
+                                ],
+                                hoverBackgroundColor: [
+                                    "lightgreen",
+                                    "red",
+                                    "yellow"
+                                ]
+                            }]
+                    };
+                    var myPieChart = new Chart(ctx,{
+                        type: 'pie',
+                        data: data,
+                        options: 'options'
+                    });
+                </script>
+            </div>
+            <div class="panel-body">
+                <canvas id="myChart" width="400" height="120"></canvas>
+                <script>
+                    var ctx = document.getElementById("myChart");
+                    var myChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                            datasets: [{
+                                label: '# of printed cards in 2016',
+                                data: [12, 19, 3, 5, 2, 3, 10, 5, 7, 9, 13, 3],
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(255, 206, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)',
+                                    'rgba(153, 102, 255, 0.2)',
+                                    'rgba(255, 159, 64, 0.2)',
+                                    'rgba(180, 159, 64, 0.2)',
+                                    'rgba(30, 19, 64, 0.2)',
+                                    'rgba(25, 15, 120, 0.2)',
+                                    'rgba(255, 9,   64, 0.2)',
+                                    'rgba(3,   15, 164, 0.2)',
+                                    'rgba(255, 109, 120, 0.2)'
+                                ],
+                                borderColor: [
+                                    'rgba(255,99,132,1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)',
+                                    'rgba(180, 159, 64, 1)',
+                                    'rgba(30, 19, 64, 1)',
+                                    'rgba(25, 15, 120, 1)',
+                                    'rgba(255, 9,   64, 1)',
+                                    'rgba(3,   15, 164, 1)',
+                                    'rgba(255, 109, 120, 1)'
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        beginAtZero:true
+                                    }
+                                }]
+                            }
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+<link href="../static/font-awesome.min.css" th:href="@{/font-awesome.min.css}" rel="stylesheet" media="screen"/>
+<link href="../static/AdminLTE.min.css" th:href="@{/AdminLTE.min.css}" rel="stylesheet" media="screen"/>
+<link href="../static/css/simple-sidebar.css" th:href="@{/css/simple-sidebar.css}" rel="stylesheet" media="screen"/>
+<link href="../static/css/jquery.dataTables.min.css" th:href="@{/css/jquery.dataTables.min.css}"  rel="stylesheet" media="screen"/>
+<link href="../static/css/dataTables.jqueryui.min.css" th:href="@{/css/dataTables.jqueryui.min.css}"  rel="stylesheet" media="screen"/>
+
+<script src="../static/js/jquery-2.2.3.min.js" th:src="@{/js/jquery-2.2.3.min.js}"></script>
+<script  type="text/javascript" src="../static/js/jquery.dataTables.min.js" th:src="@{/js/jquery.dataTables.min.js}"></script>
+<script src="../static/js/jquery-ui-1.10.3.min.js" th:src="@{/js/jquery-ui-1.10.3.min.js}"></script>
+<script src="../static/js/dataTables.jqueryui.min.js" th:src="@{/js/dataTables.jqueryui.min.js}"></script>
+
+<script  type="text/javascript" src="../static/js/Chart.min.js"  th:src="@{/js/Chart.min.js}"></script>
+<!--<link rel="icon" href="http://getbootstrap.com/favicon.ico" />-->
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" />
+
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Admin Console</title>
+</head>
+<body>
+
+<nav class="navbar navbar-default no-margin" style="background-color: #e4f5ef">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header fixed-brand" style="background-color: #e4f5ef">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"  id="menu-toggle">
+            <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+        </button>
+        <div>
+            <a class="logo" href="#">
+                <span class="logo-lg">
+                    <img  src="../static/ecobank_logo.jpeg" width="60px" height="48px" th:src="@{/ecobank_logo.jpeg}" alt="" class="img-rounded" style="margin-left: 10px; margin-top: 10px; margin-bottom: 10px"/>
+                     &nbsp; <span style="font-size: x-large">AdminConsole</span>
+                </span>
+            </a>
+        </div>
+
+    </div><!-- navbar-header-->
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+     <ul class="nav navbar-nav">
+            <li class="active" >
+                <button class="navbar-toggle collapse in" data-toggle="collapse" id="menu-toggle-2">
+                    <span style="background-color: #000000; margin-top: 10px;" class="glyphicon glyphicon-align-justify"  aria-hidden="true"></span>
+                </button>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Log Out</a></li>
+        </ul>
+    </div> <!--bs-example-navbar-collapse-1 -->
+</nav>
+<div id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
+
+            <li class="active">
+                <a href="/main"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span> Dashboard</a>
+                <!--<ul class="nav-pills nav-stacked" style="list-style-type:none;">-->
+                    <!--&lt;!&ndash;<li><a href="#">link1</a></li>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<li><a href="#">link2</a></li>&ndash;&gt;-->
+                <!--</ul>-->
+            </li>
+            <!--<li>-->
+                <!--<a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span> Shortcut</a>-->
+                <!--<ul class="nav-pills nav-stacked" style="list-style-type:none;">-->
+                    <!--<li><a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>link1</a></li>-->
+                    <!--<li><a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>link2</a></li>-->
+
+                <!--</ul>-->
+            <!--</li>-->
+            <li>
+                <a href="/cards"><span class="fa-stack fa-lg pull-left"><i class="fa fa-credit-card fa-stack-1x "></i></span>Instant Cards</a>
+            </li>
+        </ul>
+    </div><!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid xyz">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div layout:fragment="page-content">
+                    put content here
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+</div>
+<!-- /#wrapper -->
+
+<!--<div class="wrapper">-->
+    <!--<header class="main-header">-->
+
+        <!--&lt;!&ndash; Logo &ndash;&gt;-->
+        <!--<a href="/" class="logo">-->
+            <!--<span class="logo-lg"><img src="../static/ecobank_logo.jpeg" width="42px" height="42px" alt="App Logo" th:src="@{/ecobank_logo.jpeg}" />-->
+                <!--&nbsp; AdminConsole</span>-->
+        <!--</a>-->
+
+
+    <!--</header>-->
+    <!--<div layout:fragment="page-content">-->
+        <!--put content here-->
+    <!--</div>-->
+<!--</div>-->
+
+
+<script src="../static/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+<script src="../static/js/sidebar_menu.js" th:src="@{/js/sidebar_menu.js}"></script>
+
+</body>
+</html>
