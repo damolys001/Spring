@@ -8,7 +8,7 @@ import javax.validation.constraints.Size;
 
 
 public @Data class User {
-    @NotNull
+    @NotNull 
     @Size(min = 2, max = 20)
     private String userid;
     @NotNull
