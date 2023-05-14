@@ -5,7 +5,7 @@ import lombok.Data;
 
 public @Data class CardModel {
 
-    private String solId;
+    private String solId; 
     private String cardPan;
     private String accountName;
     private String requestDate;
