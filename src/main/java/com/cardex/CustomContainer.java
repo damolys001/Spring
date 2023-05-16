@@ -9,7 +9,6 @@ public class CustomContainer implements EmbeddedServletContainerCustomizer {
 
 	@Override
 	public void customize(ConfigurableEmbeddedServletContainer container) {
-
 		container.setPort(9090);
 		container.setContextPath("/Admin");
 
