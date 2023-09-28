@@ -1,6 +1,6 @@
 package com.cardex.forms;
 
-import lombok.Data;
+import lombok.Data; 
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
